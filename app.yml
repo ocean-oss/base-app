@@ -1,7 +1,4 @@
 ---
-name: your-app
-public: true
-description: ''
 workflow_steps:
 - engines:
   - name: main-engine
@@ -29,4 +26,7 @@ workflow_steps:
         registry_name: docker_hub
         image_name: ubuntu
         snapshot_name: latest
-    buttons: []
+    buttons:
+      - node_target: all
+        label: Hello Ocean!
+        url: www.ocean.dev
