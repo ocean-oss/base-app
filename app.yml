@@ -6,7 +6,6 @@ workflow_steps:
     variables:
     - name: engine_port
       value: reserve_port()
-    files: []
     orchestrator:
       type: Orchestrator::MasterWorker
       deploy_to_master: true
