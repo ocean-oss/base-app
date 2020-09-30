@@ -16,8 +16,8 @@ steps:
       engine_mount: "/etc/ocean"
       data_stores_mount: "{{ orchestrator.container.workdir }}"
       ssh_mount: "/home/{{ workspace.user.name }}/.ssh"
-      master_env_vars: ''
-      worker_env_vars: ''
+      master_env_vars: []
+      worker_env_vars: []
       master_entrypoint: ''
       worker_entrypoint: ''
       master_command: ''
