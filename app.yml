@@ -1,8 +1,9 @@
 ---
-workflow_steps:
+ocean:
+  version: "1"
+steps:
 - engines:
   - name: main-engine
-    label: Main Engine
     variables:
     - name: engine_port
       value: reserve_port()
