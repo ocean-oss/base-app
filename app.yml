@@ -9,18 +9,18 @@ steps:
       value: reserve_port()
     orchestrator:
       type: Orchestrator::MasterWorker
-      deploy_to_master: true
+      deploy_to_main: true
       deploy_to_workers: false
       container_user: "{{ workspace.user.uid }}:{{ workspace.user.gid }}"
       container_workdir: "/work"
       engine_mount: "/etc/ocean"
       data_stores_mount: "{{ orchestrator.container.workdir }}"
       ssh_mount: "/home/{{ workspace.user.name }}/.ssh"
-      master_env_vars: []
+      main_env_vars: []
       worker_env_vars: []
-      master_entrypoint: ''
+      main_entrypoint: ''
       worker_entrypoint: ''
-      master_command: ''
+      main_command: ''
       worker_command: ''
       snapshot_definition:
         registry_name: docker_hub
