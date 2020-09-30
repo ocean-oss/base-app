@@ -8,7 +8,7 @@ steps:
     - name: engine_port
       value: reserve_port()
     orchestrator:
-      type: Orchestrator::MasterWorker
+      type: Orchestrator::MainWithWorkers
       deploy_to_main: true
       deploy_to_workers: false
       container_user: "{{ workspace.user.uid }}:{{ workspace.user.gid }}"
