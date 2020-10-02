@@ -4,28 +4,35 @@ ocean:
 steps:
 - engines:
   - name: main-engine
-    variables:
+    vars:
     - name: engine_port
       value: reserve_port()
     orchestrator:
       type: Orchestrator::MainWithWorkers
       deploy_to_main: true
       deploy_to_workers: false
-      container_user: "{{ workspace.user.uid }}:{{ workspace.user.gid }}"
-      container_workdir: "/work"
-      engine_mount: "/etc/ocean"
-      data_stores_mount: "{{ orchestrator.container.workdir }}"
-      ssh_mount: "/home/{{ workspace.user.name }}/.ssh"
-      main_env_vars: []
-      worker_env_vars: []
-      main_entrypoint: ''
-      worker_entrypoint: ''
-      main_command: ''
-      worker_command: ''
-      snapshot_definition:
-        registry_name: docker_hub
-        image_name: ubuntu
-        snapshot_name: latest
+      snapshot:
+        registry:
+          name: docker_hub
+        image:
+          name: ubuntu
+        name: latest
+      container:
+        user: "{{ workspace.user.uid }}:{{ workspace.user.gid }}"
+        workdir: "/work"
+        mounts:
+          engine: "/etc/ocean"
+          data_stores: "{{ orchestrator.container.workdir }}"
+          ssh: "/home/{{ workspace.user.name }}/.ssh"
+      nodes:
+        main:
+          env_vars: []
+          entrypoint: ''
+          command: ''
+        worker:
+          env_vars: [ ]
+          entrypoint: ''
+          command: ''
     buttons:
       - node_target: all
         label: Hello Ocean!
