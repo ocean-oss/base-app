@@ -28,11 +28,7 @@ steps:
         main:
           env_vars: []
           entrypoint: ''
-          command: ''
-        worker:
-          env_vars: [ ]
-          entrypoint: ''
-          command: ''
+          command: 'tail -f /dev/null'
     buttons:
       - node_target: all
         label: Hello Ocean!
