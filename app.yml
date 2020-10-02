@@ -33,4 +33,4 @@ steps:
       buttons:
         - node_target: all
           label: Hello Ocean!
-          url: www.ocean.dev
+          url: https://www.ocean.dev
