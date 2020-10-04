@@ -24,11 +24,11 @@ steps:
           engine: "/etc/ocean"
           data_stores: "{{ orchestrator.container.workdir }}"
           ssh: "/home/{{ workspace.user.name }}/.ssh"
-      nodes:
-        main:
-          env_vars: []
-          entrypoint: ''
-          command: 'tail -f /dev/null'
+        nodes:
+          main:
+            env_vars: []
+            entrypoint: ''
+            command: 'tail -f /dev/null'
     views:
       buttons:
         - node_target: all
