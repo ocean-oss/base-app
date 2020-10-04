@@ -29,7 +29,7 @@ steps:
             env_vars: []
             entrypoint: ''
             command: 'tail -f /dev/null'
-    views:
+    ui:
       buttons:
         - node_target: all
           label: Hello Ocean!
